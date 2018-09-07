@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+function aFunction(){
+	var textBox1 = document.getElementById("nameField");
+	var letters = /^[a-zA-Z ]+$/;
+	
+	var textBox2 = document.getElementById("dobField");
+	var dob = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+	
+	var textBox3 = document.getElementById("addressField");
+	var address = /^[A-Za-z0-9- ]+$/;
+	
+	var textBox4 = document.getElementById("postCodeField");
+	var postCode = /^[A-Za-z0-9- ]+$/;
+	
+	var textBox5 = document.getElementById("emailField");
+	var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}$/;
+	
+	if (textBox1.value == "" || !(textBox1.value.match(letters))) {
+		
+		document.getElementById("nameField").focus();
+		alert("Invalid Name Entered!");
+		return false;
+		
+		}
+	
+	if (textBox2.value == "" || !(textBox2.value.match(dob))) {
+		
+		document.getElementById("dobField").focus();
+		alert("Invalid Date of Birth Entered!");
+		return false;
+		
+		}
+		
+	if (textBox3.value == "" || !(textBox3.value.match(address))) {
+		
+		document.getElementById("addressField").focus();
+		alert("Invalid Address Entered!");
+		return false;
+		
+		}
+		
+	if (textBox4.value == "" || !(textBox4.value.match(postCode))) {
+		
+		document.getElementById("postCodeField").focus();
+		alert("Invalid Postcode Entered!");
+		return false;
+		
+		}
+		
+	if (textBox5.value == "" || !(textBox5.value.match(email))) {
+		
+		document.getElementById("emailField").focus();
+		alert("Invalid E-Mail Address Entered!");
+		return false;
+		
+		}
+		
+		localStorage.setItem("nam", "tfdygf");
+		
+		console.log(localStorage.getItem("nam"));
+		
+		
+
+}
+
+
+</script>
+
+<form onsubmit = "return aFunction()" action = "FormDataPage.html">
+
+Enter Name:
+<input id = "nameField"><br><br>
+
+Enter Date of Birth in DD/MM/YYYY format:
+<input id = "dobField"><br><br>
+
+Enter Address:
+<input id = "addressField"><br><br>
+
+Enter Postcode:
+<input id = "postCodeField"><br><br>
+
+Enter Email:
+<input id = "emailField"><br><br>
+
+<input type = "Submit">
+
+</input>
+
+</form>
+</body>
+</html>
